@@ -20,7 +20,24 @@ namespace CoreProgram
             }
             return hashSb.ToString();
         }
-
+        //chuyển từ hệ hex sang hệ 10
+        public static BigInteger HexToDecimal(string hexNumber)
+        {
+            BigInteger result = 0;
+            foreach (char c in hexNumber)
+            {
+                if (char.IsDigit(c))
+                {
+                    result = result * 16 + (c - '0');
+                }
+                else
+                {
+                    int value = char.ToUpper(c) - 'A' + 10;
+                    result = result * 16 + value;
+                }
+            }
+            return result;
+        }
 
     }
 
