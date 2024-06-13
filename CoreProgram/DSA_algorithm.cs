@@ -107,7 +107,7 @@ namespace CoreProgram
         public static Dictionary<BigInteger, BigInteger> SigningMessage(string hashCode, BigInteger p, BigInteger q, BigInteger g, BigInteger x)
         {
             Dictionary<BigInteger, BigInteger> signature = new Dictionary<BigInteger, BigInteger>();
-            BigInteger hashValue = BigInteger.Parse(hashCode, System.Globalization.NumberStyles.HexNumber);
+            BigInteger hashValue = SHA_1.HexToDecimal(hashCode);
             BigInteger k, r, s;
 
             do
