@@ -109,21 +109,21 @@ namespace CoreProgram
         }
 
         //Số nguyên tố lớn
-        //public static BigInteger GeneratePrimeNumber(int bit)
-        //{
-        //    Random random = new Random();
-        //    BigInteger res;
+        public static BigInteger GeneratePrimeNumber(int bit)
+        {
+            Random random = new Random();
+            BigInteger res;
 
-        //    do
-        //    {
-        //        byte[] bytes = new byte[bit / 8];
-        //        random.NextBytes(bytes);
-        //        res = new BigInteger(bytes);
+            do
+            {
+                byte[] bytes = new byte[bit / 8];
+                random.NextBytes(bytes);
+                res = new BigInteger(bytes);
 
-        //    } while (!IsPrime(res, 20));
+            } while (!IsPrime(res, 20));
 
-        //    return res;
-        //}
+            return res;
+        }
 
         //Số nguyên tố  nhỏ
         public static BigInteger GeneratePrimeNumber()
@@ -140,25 +140,25 @@ namespace CoreProgram
             return q;
         }
 
-        //Tinh p = q.z+1, lấy số nguyên tố q là ước của p
-        //public static biginteger generateprimenumberismultiple(biginteger q, int bit)
-        //{
-        //    using (randomnumbergenerator rng = randomnumbergenerator.create())
-        //    {
-        //         biginteger p;
+        //Tinh p = q.z + 1, lấy số nguyên tố q là ước của p
+        public static BigInteger GeneratePrimeNumberIsMultiple(BigInteger q, int bit)
+        {
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            {
+                BigInteger p;
 
-        //         do
-        //            {
-        //                byte[] bytes = new byte[bit / 8];
-        //                rng.getbytes(bytes);
-        //                biginteger z = new biginteger(bytes);
-        //                p = z * q + biginteger.one;
-        //            } while (!isprime(p, 20));
+                do
+                {
+                    byte[] bytes = new byte[bit / 8];
+                    rng.GetBytes(bytes);
+                    BigInteger z = new BigInteger(bytes);
+                    p = z * q + BigInteger.One;
+                } while (!IsPrime(p, 20));
 
-        //            return p;
-        //    }
+                return p;
+            }
 
-        //}
+        }
 
         //Lấy số nguyên tố q là ước của p với q là int
         public static BigInteger GeneratePrimeNumberIsMultiple(BigInteger q)

@@ -1,26 +1,31 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CoreProgram;
+using Org.BouncyCastle.Crypto.Generators;
+using System.Globalization;
 using System.Numerics;
 class Program
 {
+    
     public static void Main()
     {
-        BigInteger a = 11;
-        BigInteger n = 17;
-        Console.WriteLine(utilities.NghichDao(a,n));
-        int k = 20;
-        if (utilities.IsPrime(n, k))
-        {
-            Console.WriteLine("True");
-        }
-        else
-        {
-            Console.WriteLine("False");
-        }
-        Console.WriteLine("ran = "+utilities.GetRandomNumber(2, n-1));
-        BigInteger q = utilities.GeneratePrimeNumber();
-        Console.WriteLine("q=" + q);
+        //int bit = 1024; // Example bit length
 
-        Console.WriteLine("p= " + utilities.GeneratePrimeNumberIsMultiple(q));
+        string text = "hello world";
+        string hashString = SHA_1.SHA1(text);
+        BigInteger decimalNumber = SHA_1.HexToDecimal(hashString);
+
+        Console.WriteLine(hashString);
+        Console.WriteLine(decimalNumber);
+        int bitLength = 1024;
+
+        DSA_algorithm d = new DSA_algorithm();
+        d.generateKeyDSA();
+        Console.WriteLine("Q="+d.Q);
+        Console.WriteLine("P=" + d.P);
+        Console.WriteLine("G="+d.G);
+        Console.WriteLine("H="+d.H);
+        Console.WriteLine("X=" + d.X);
+        Console.WriteLine("Y=" + d.Y);
+
     }
 }
