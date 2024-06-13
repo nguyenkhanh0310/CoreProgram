@@ -64,7 +64,7 @@ namespace CoreProgram
         //Tạo khóa với số bit lớn
         public void generateKeyDSA(int bit)
         {
-            q = utilities.GeneratePrimeNumber(bit - 10);
+            q = utilities.GeneratePrimeNumber(bit);
             p = utilities.GeneratePrimeNumberIsMultiple(q, bit);
             h = utilities.GetRandomNumber(2, p - 2);
             do
@@ -122,7 +122,6 @@ namespace CoreProgram
 
             return signature;
         }
-
 
     }
 }
