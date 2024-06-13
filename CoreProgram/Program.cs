@@ -19,7 +19,11 @@ class Program
         int bitLength = 1024;
 
         DSA_algorithm d = new DSA_algorithm();
+<<<<<<< Updated upstream
         d.generateKeyDSA();
+=======
+        d.generateKeyDSA(bitLength);
+>>>>>>> Stashed changes
         Console.WriteLine("Q="+d.Q);
         Console.WriteLine("P=" + d.P);
         Console.WriteLine("G="+d.G);

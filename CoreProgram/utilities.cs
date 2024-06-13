@@ -41,16 +41,6 @@ namespace CoreProgram
             return BigInteger.MinusOne;
         }
 
-        public static BigInteger mod(this BigInteger dividend, BigInteger divisor)
-        {
-            BigInteger result = dividend % divisor;
-            if (result < 0)
-            {
-                result += divisor;
-            }
-            return result;
-        }
-
         //Lay so ngau nhien trong khoang
         public static BigInteger GetRandomNumber(BigInteger min, BigInteger max)
         {
@@ -86,10 +76,9 @@ namespace CoreProgram
             for (int i = 0; i < k; i++)
             {
                 BigInteger a = GetRandomNumber(2,n-2);
-                BigInteger x = BigInteger.ModPow(a, d, n);
+                BigInteger x = BigInteger.ModPow(a, d, n); //ModPow hàm lũy thừa
                 if (x == 1 || x == n - 1) continue;
 
-                bool isPrime = false;
                 for (int r =0; r < s-1; r++)
                 {
                     x = BigInteger.ModPow(x, 2, n);
@@ -97,7 +86,6 @@ namespace CoreProgram
                         return false;
                     if (x == n - 1)
                     {
-                        //isPrime = true;
                         break;
                     }
                         
@@ -125,7 +113,7 @@ namespace CoreProgram
             return res;
         }
 
-        //Số nguyên tố  nhỏ
+        //Số nguyên tố nhỏ
         public static BigInteger GeneratePrimeNumber()
         {
             Random random = new Random();
@@ -136,11 +124,10 @@ namespace CoreProgram
                 int value = random.Next(1000000000) + 1000000000;
                 q = new BigInteger(value);
             } while (!IsPrime(q, 20));
-
             return q;
         }
 
-        //Tinh p = q.z + 1, lấy số nguyên tố q là ước của p
+        //Tinh p = q.z+1, lấy số nguyên tố q là ước của p
         public static BigInteger GeneratePrimeNumberIsMultiple(BigInteger q, int bit)
         {
             using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
