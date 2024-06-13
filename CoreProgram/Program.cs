@@ -12,24 +12,29 @@ class Program
 
         string text = "hello world";
         string hashString = SHA_1.SHA1(text);
-        BigInteger decimalNumber = SHA_1.HexToDecimal(hashString);
+        //BigInteger decimalNumber = SHA_1.HexToDecimal(hashString);
 
-        Console.WriteLine(hashString);
-        Console.WriteLine(decimalNumber);
+        Console.WriteLine("Hash = "+hashString);
+        //Console.WriteLine(decimalNumber);
         int bitLength = 1024;
 
         DSA_algorithm d = new DSA_algorithm();
-<<<<<<< Updated upstream
-        d.generateKeyDSA();
-=======
         d.generateKeyDSA(bitLength);
->>>>>>> Stashed changes
+        BigInteger q = d.Q;
+        BigInteger p = d.P;
+        BigInteger g = d.G;
+        BigInteger x = d.X;
         Console.WriteLine("Q="+d.Q);
         Console.WriteLine("P=" + d.P);
         Console.WriteLine("G="+d.G);
         Console.WriteLine("H="+d.H);
         Console.WriteLine("X=" + d.X);
         Console.WriteLine("Y=" + d.Y);
+        Dictionary<BigInteger, BigInteger> signature = d.SigningMessage(hashString,p,q,g,x);
+        foreach (var pair in signature)
+        {
+            Console.WriteLine($"r: {pair.Key}, s: {pair.Value}");
+        }
 
     }
 }

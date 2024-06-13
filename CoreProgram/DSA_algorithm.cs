@@ -104,7 +104,7 @@ namespace CoreProgram
             y = BigInteger.ModPow(g, x, p);
         }
 
-        public static Dictionary<BigInteger, BigInteger> SigningMessage(string hashCode, BigInteger p, BigInteger q, BigInteger g, BigInteger x)
+        public Dictionary<BigInteger, BigInteger> SigningMessage(string hashCode, BigInteger p, BigInteger q, BigInteger g, BigInteger x)
         {
             Dictionary<BigInteger, BigInteger> signature = new Dictionary<BigInteger, BigInteger>();
             BigInteger hashValue = SHA_1.HexToDecimal(hashCode);
