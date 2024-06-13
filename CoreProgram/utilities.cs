@@ -108,6 +108,7 @@ namespace CoreProgram
             return true;
         }
 
+        //Số nguyên tố lớn
         //public static BigInteger GeneratePrimeNumber(int bit)
         //{
         //    Random random = new Random();
@@ -124,6 +125,7 @@ namespace CoreProgram
         //    return res;
         //}
 
+        //Số nguyên tố  nhỏ
         public static BigInteger GeneratePrimeNumber()
         {
             Random random = new Random();
@@ -138,7 +140,7 @@ namespace CoreProgram
             return q;
         }
 
-        //Tinh p = q.z+1
+        //Tinh p = q.z+1, lấy số nguyên tố q là ước của p
         //public static biginteger generateprimenumberismultiple(biginteger q, int bit)
         //{
         //    using (randomnumbergenerator rng = randomnumbergenerator.create())
@@ -158,6 +160,7 @@ namespace CoreProgram
 
         //}
 
+        //Lấy số nguyên tố q là ước của p với q là int
         public static BigInteger GeneratePrimeNumberIsMultiple(BigInteger q)
         {
             Random rand = new Random();
@@ -174,5 +177,6 @@ namespace CoreProgram
 
             return p;
         }
+
     }
 }
