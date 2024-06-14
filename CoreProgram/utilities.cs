@@ -41,7 +41,7 @@ namespace CoreProgram
             return BigInteger.MinusOne;
         }
 
-        //Lay so ngau nhien trong khoang
+        //Lay so ngau nhien trong khoang min den max
         public static BigInteger GetRandomNumber(BigInteger min, BigInteger max)
         {
             Random random = new Random();
@@ -52,9 +52,9 @@ namespace CoreProgram
                 byte[] bytes = new byte[max.GetByteCount()];
                 random.NextBytes(bytes);
                 randomBigInteger = new BigInteger(bytes);
-            } while (randomBigInteger<min || randomBigInteger > max );
+            } while (randomBigInteger < min || randomBigInteger > max);
 
-            randomBigInteger = (randomBigInteger -min) % (max - min + 1) + min;
+            randomBigInteger = (randomBigInteger - min) % (max - min + 1) + min;
             return randomBigInteger;
         }
         //Kiểm tra tính nguyên tố bằng Miller Rabin với k lần thử
@@ -75,20 +75,20 @@ namespace CoreProgram
             //Kiểm tra thuật toán với k lần lặp
             for (int i = 0; i < k; i++)
             {
-                BigInteger a = GetRandomNumber(2,n-2);
+                BigInteger a = GetRandomNumber(2, n - 2);
                 BigInteger x = BigInteger.ModPow(a, d, n); //ModPow hàm lũy thừa
                 if (x == 1 || x == n - 1) continue;
 
-                for (int r =0; r < s-1; r++)
+                for (int r = 0; r < s - 1; r++)
                 {
                     x = BigInteger.ModPow(x, 2, n);
-                    if (x==1)
+                    if (x == 1)
                         return false;
                     if (x == n - 1)
                     {
                         break;
                     }
-                        
+
                 }
                 if (!(x == n - 1)) return false;
             }
@@ -161,7 +161,6 @@ namespace CoreProgram
                 z = new BigInteger(value);
                 p = z * q + BigInteger.One;
             }
-
             return p;
         }
 
