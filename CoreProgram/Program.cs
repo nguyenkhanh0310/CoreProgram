@@ -7,21 +7,22 @@ namespace CoreProgram
         public static void Main(string[] args)
         {
             //int bit = 1024; // Example bit length
+            DSA_algorithm d = new DSA_algorithm();
+            string message1 = "Hello World!";
 
             //string text = "hello world";
-            //string hashString = SHA_1.SHA1(text);
-            ////BigInteger decimalNumber = SHA_1.HexToDecimal(hashString);
+            string hashString = SHA_1.SHA1(message1);
+            //BigInteger decimalNumber = SHA_1.HexToDecimal(hashString);
 
-            //Console.WriteLine("Hash = " + hashString);
-            ////Console.WriteLine(decimalNumber);
-            //int bitLength = 1024;
+            Console.WriteLine("Hash = " + hashString);
+            //Console.WriteLine(decimalNumber);
+            int bitlength = 1024;
 
-            //DSA_algorithm d = new DSA_algorithm();
-            //d.generateKeyDSA(bitLength);
-            //BigInteger q = d.Q;
-            //BigInteger p = d.P;
-            //BigInteger g = d.G;
-            //BigInteger x = d.X;
+            d.generateKeyDSA(bitlength);
+            BigInteger q = d.Q;
+            BigInteger p = d.P;
+            BigInteger g = d.G;
+            BigInteger x = d.X;
             //Console.WriteLine("Q=" + d.Q);
             //Console.WriteLine("P=" + d.P);
             //Console.WriteLine("G=" + d.G);
@@ -35,18 +36,15 @@ namespace CoreProgram
             //}
 
 
-            DSA_algorithm d = new DSA_algorithm();
 
-            d.generateKeyDSA(utilities.GeneratePrimeNumber());
-            BigInteger p = d.P;
-            BigInteger q = d.Q;
-            BigInteger g = d.G;
-            BigInteger x = d.X;
-            BigInteger y = d.Y;
+            //d.generateKeyDSA(utilities.GeneratePrimeNumber());
+            //BigInteger p = d.P;
+            //BigInteger q = d.Q;
+            //BigInteger g = d.G;
+            //BigInteger x = d.X;
+            //BigInteger y = d.Y;
 
-            string message1 = "Hello World!";
 
-            Console.WriteLine("Hash = " + SHA_1.SHA1(message1));
             Dictionary<BigInteger, BigInteger> signature = d.SigningMessage(SHA_1.SHA1(message1), d.P, d.Q, d.G, d.X);
 
             BigInteger r = 0, s = 0;
