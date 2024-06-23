@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
-namespace CoreProgram
+namespace demoWF
 {
     public static class utilities
     {
@@ -40,6 +40,23 @@ namespace CoreProgram
                 return t1;
             return BigInteger.MinusOne;
         }
+        //Hàm tính a^b mod n
+        public static BigInteger ModPow(BigInteger a, BigInteger b, BigInteger n)
+        {
+            if (b == 0) return 1; // a^0 = 1
+            if (b == 1) return a % n; // a^1 = a mod n
+
+            BigInteger result = 1;
+            while (b > 0)
+            {
+                if (b % 2 == 1) result = (result * a) % n; // Multiply if odd power
+                a = (a * a) % n; // Square the base
+                b >>= 1; // Divide the exponent by 2
+            }
+            return result;
+        }
+
+
 
         //Lay so ngau nhien trong khoang min den max
         public static BigInteger GetRandomNumber(BigInteger min, BigInteger max)

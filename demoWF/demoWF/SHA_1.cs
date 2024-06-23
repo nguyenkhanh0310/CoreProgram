@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Numerics;
 
 
-namespace CoreDSA_WF
+namespace demoWF
 {
     public class SHA_1
     {
