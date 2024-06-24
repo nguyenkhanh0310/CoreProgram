@@ -17,6 +17,7 @@ namespace demoWF
 {
     public partial class SignDoc : Form
     {
+        DSA_algorithm d = new DSA_algorithm();
         public SignDoc()
         {
             InitializeComponent();
@@ -111,6 +112,8 @@ namespace demoWF
                 txtHashResult.Text = hashCode.ToString();
                 txtSignR.Text = r.ToString();
                 txtSignS.Text = s.ToString();
+                d.R = r;
+                d.S = s;
                 MessageBox.Show(null, "Tạo chữ ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

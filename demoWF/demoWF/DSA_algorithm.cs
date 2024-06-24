@@ -16,7 +16,8 @@ namespace demoWF
         private BigInteger h;
         private BigInteger x;
         private BigInteger y;
-
+        private BigInteger r;
+        private BigInteger s;
         public DSA_algorithm()
         {
         }
@@ -61,6 +62,16 @@ namespace demoWF
             get { return y; }
             set { y = value; }
         }
+        public BigInteger R
+        {
+            get { return r; }
+            set { r = value; }
+        }
+        public BigInteger S
+        {
+            get { return s; }
+            set { s = value; }
+        }
 
         //Tạo khóa với số bit lớn
         public void generateKeyDSA()
@@ -96,7 +107,7 @@ namespace demoWF
         {
             Dictionary<BigInteger, BigInteger> signature = new Dictionary<BigInteger, BigInteger>();
             BigInteger hashValue = SHA_1.HexToDecimal(hashCode);
-            BigInteger k, r, s;
+            BigInteger k;
 
             do
             {

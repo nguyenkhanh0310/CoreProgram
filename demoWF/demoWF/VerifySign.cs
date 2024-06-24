@@ -150,18 +150,17 @@ namespace demoWF
                 BigInteger r = BigInteger.Parse(txtConfirmR.Text.ToString());
                 BigInteger s = BigInteger.Parse(txtConfirmS.Text.ToString());
 
-                // Signature verification
-                //if (!r.Equals(d.R))
-                //{
-                //    MessageBox.Show("Thành phần chữ ký r bị giả mạo ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
+                if (!r.Equals(d.R))
+                {
+                    MessageBox.Show("Thành phần chữ ký r bị giả mạo ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
-                //if (!s.Equals(d.S)
-                //{
-                //    MessageBox.Show("Thành phần chữ ký s bị giả mạo ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
+                if (!s.Equals(d.S))
+                {
+                    MessageBox.Show("Thành phần chữ ký s bị giả mạo ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
                 // Calculate hash value (assuming SHA-1)
                 string hashCode = SHA_1.SHA1(txtConfirmDoc.Text);
