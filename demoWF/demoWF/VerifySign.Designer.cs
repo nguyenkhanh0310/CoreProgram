@@ -43,27 +43,26 @@
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
-            label1 = new Label();
-            veriDoc = new RichTextBox();
-            label2 = new Label();
-            resultSHA = new RichTextBox();
-            txtP = new RichTextBox();
-            label10 = new Label();
-            richTextBox1 = new RichTextBox();
-            label3 = new Label();
-            richTextBox2 = new RichTextBox();
-            label4 = new Label();
-            richTextBox3 = new RichTextBox();
-            label9 = new Label();
-            richTextBox4 = new RichTextBox();
-            label11 = new Label();
-            richTextBox5 = new RichTextBox();
-            label12 = new Label();
-            richTextBox6 = new RichTextBox();
-            label13 = new Label();
+            lblConfirmDoc = new Label();
+            txtConfirmDoc = new RichTextBox();
+            lblHashResultC = new Label();
+            txtHashConfirmC = new RichTextBox();
+            txtConfirmP = new RichTextBox();
+            lblConfirmP = new Label();
+            txtConfirmQ = new RichTextBox();
+            lblConfirmQ = new Label();
+            txtConfirmG = new RichTextBox();
+            lblConfirmG = new Label();
+            txtConfirmY = new RichTextBox();
+            lblConfirmY = new Label();
             btnCheck = new Button();
-            btnUpDoc = new Button();
-            btnUpSign = new Button();
+            btnUpDocCon = new Button();
+            btnUpSignCon = new Button();
+            txtSignC = new Label();
+            txtConfirmS = new RichTextBox();
+            lblConfirmS = new Label();
+            txtConfirmR = new RichTextBox();
+            lblConfirmR = new Label();
             ((System.ComponentModel.ISupportInitialize)logoDSA).BeginInit();
             panelMenu.SuspendLayout();
             panelSideBar.SuspendLayout();
@@ -119,7 +118,7 @@
             panelSideBar.Location = new Point(0, 66);
             panelSideBar.Margin = new Padding(3, 2, 3, 2);
             panelSideBar.Name = "panelSideBar";
-            panelSideBar.Size = new Size(155, 359);
+            panelSideBar.Size = new Size(155, 375);
             panelSideBar.TabIndex = 5;
             // 
             // exit
@@ -251,242 +250,235 @@
             label5.TabIndex = 0;
             label5.Text = "Hướng dẫn:";
             // 
-            // label1
+            // lblConfirmDoc
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(489, 64);
-            label1.Name = "label1";
-            label1.Size = new Size(126, 15);
-            label1.TabIndex = 16;
-            label1.Text = "Văn bản cần xác nhận:";
+            lblConfirmDoc.AutoSize = true;
+            lblConfirmDoc.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmDoc.Location = new Point(489, 64);
+            lblConfirmDoc.Name = "lblConfirmDoc";
+            lblConfirmDoc.Size = new Size(126, 15);
+            lblConfirmDoc.TabIndex = 16;
+            lblConfirmDoc.Text = "Văn bản cần xác nhận:";
             // 
-            // veriDoc
+            // txtConfirmDoc
             // 
-            veriDoc.Location = new Point(489, 86);
-            veriDoc.Margin = new Padding(3, 2, 3, 2);
-            veriDoc.Name = "veriDoc";
-            veriDoc.Size = new Size(282, 98);
-            veriDoc.TabIndex = 17;
-            veriDoc.Text = "";
+            txtConfirmDoc.Location = new Point(489, 86);
+            txtConfirmDoc.Margin = new Padding(3, 2, 3, 2);
+            txtConfirmDoc.Name = "txtConfirmDoc";
+            txtConfirmDoc.Size = new Size(282, 98);
+            txtConfirmDoc.TabIndex = 17;
+            txtConfirmDoc.Text = "";
             // 
-            // label2
+            // lblHashResultC
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(489, 204);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 15);
-            label2.TabIndex = 18;
-            label2.Text = "Kết quả hàm băm:";
+            lblHashResultC.AutoSize = true;
+            lblHashResultC.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHashResultC.Location = new Point(489, 204);
+            lblHashResultC.Name = "lblHashResultC";
+            lblHashResultC.Size = new Size(104, 15);
+            lblHashResultC.TabIndex = 18;
+            lblHashResultC.Text = "Kết quả hàm băm:";
             // 
-            // resultSHA
+            // txtHashConfirmC
             // 
-            resultSHA.Location = new Point(489, 221);
-            resultSHA.Margin = new Padding(3, 2, 3, 2);
-            resultSHA.Name = "resultSHA";
-            resultSHA.Size = new Size(282, 65);
-            resultSHA.TabIndex = 19;
-            resultSHA.Text = "";
+            txtHashConfirmC.Location = new Point(489, 221);
+            txtHashConfirmC.Margin = new Padding(3, 2, 3, 2);
+            txtHashConfirmC.Name = "txtHashConfirmC";
+            txtHashConfirmC.Size = new Size(282, 65);
+            txtHashConfirmC.TabIndex = 19;
+            txtHashConfirmC.Text = "";
             // 
-            // txtP
+            // txtConfirmP
             // 
-            txtP.Location = new Point(215, 192);
-            txtP.Margin = new Padding(3, 2, 3, 2);
-            txtP.Name = "txtP";
-            txtP.Size = new Size(226, 28);
-            txtP.TabIndex = 21;
-            txtP.Text = "";
+            txtConfirmP.Location = new Point(215, 192);
+            txtConfirmP.Margin = new Padding(3, 2, 3, 2);
+            txtConfirmP.Name = "txtConfirmP";
+            txtConfirmP.Size = new Size(226, 28);
+            txtConfirmP.TabIndex = 21;
+            txtConfirmP.Text = "";
             // 
-            // label10
+            // lblConfirmP
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(176, 200);
-            label10.Name = "label10";
-            label10.Size = new Size(18, 20);
-            label10.TabIndex = 20;
-            label10.Text = "P";
+            lblConfirmP.AutoSize = true;
+            lblConfirmP.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmP.Location = new Point(191, 192);
+            lblConfirmP.Name = "lblConfirmP";
+            lblConfirmP.Size = new Size(18, 20);
+            lblConfirmP.TabIndex = 20;
+            lblConfirmP.Text = "P";
             // 
-            // richTextBox1
+            // txtConfirmQ
             // 
-            richTextBox1.Location = new Point(216, 224);
-            richTextBox1.Margin = new Padding(3, 2, 3, 2);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(226, 28);
-            richTextBox1.TabIndex = 23;
-            richTextBox1.Text = "";
+            txtConfirmQ.Location = new Point(215, 224);
+            txtConfirmQ.Margin = new Padding(3, 2, 3, 2);
+            txtConfirmQ.Name = "txtConfirmQ";
+            txtConfirmQ.Size = new Size(226, 28);
+            txtConfirmQ.TabIndex = 23;
+            txtConfirmQ.Text = "";
             // 
-            // label3
+            // lblConfirmQ
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(177, 232);
-            label3.Name = "label3";
-            label3.Size = new Size(20, 20);
-            label3.TabIndex = 22;
-            label3.Text = "Q";
+            lblConfirmQ.AutoSize = true;
+            lblConfirmQ.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmQ.Location = new Point(189, 224);
+            lblConfirmQ.Name = "lblConfirmQ";
+            lblConfirmQ.Size = new Size(20, 20);
+            lblConfirmQ.TabIndex = 22;
+            lblConfirmQ.Text = "Q";
             // 
-            // richTextBox2
+            // txtConfirmG
             // 
-            richTextBox2.Location = new Point(215, 255);
-            richTextBox2.Margin = new Padding(3, 2, 3, 2);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(226, 28);
-            richTextBox2.TabIndex = 25;
-            richTextBox2.Text = "";
+            txtConfirmG.Location = new Point(215, 255);
+            txtConfirmG.Margin = new Padding(3, 2, 3, 2);
+            txtConfirmG.Name = "txtConfirmG";
+            txtConfirmG.Size = new Size(226, 28);
+            txtConfirmG.TabIndex = 25;
+            txtConfirmG.Text = "";
             // 
-            // label4
+            // lblConfirmG
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(176, 263);
-            label4.Name = "label4";
-            label4.Size = new Size(20, 20);
-            label4.TabIndex = 24;
-            label4.Text = "G";
+            lblConfirmG.AutoSize = true;
+            lblConfirmG.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmG.Location = new Point(189, 255);
+            lblConfirmG.Name = "lblConfirmG";
+            lblConfirmG.Size = new Size(20, 20);
+            lblConfirmG.TabIndex = 24;
+            lblConfirmG.Text = "G";
             // 
-            // richTextBox3
+            // txtConfirmY
             // 
-            richTextBox3.Location = new Point(231, 312);
-            richTextBox3.Margin = new Padding(3, 2, 3, 2);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(226, 28);
-            richTextBox3.TabIndex = 27;
-            richTextBox3.Text = "";
+            txtConfirmY.Location = new Point(215, 287);
+            txtConfirmY.Margin = new Padding(3, 2, 3, 2);
+            txtConfirmY.Name = "txtConfirmY";
+            txtConfirmY.Size = new Size(226, 28);
+            txtConfirmY.TabIndex = 27;
+            txtConfirmY.Text = "";
             // 
-            // label9
+            // lblConfirmY
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(192, 320);
-            label9.Name = "label9";
-            label9.Size = new Size(24, 20);
-            label9.TabIndex = 26;
-            label9.Text = "W";
-            // 
-            // richTextBox4
-            // 
-            richTextBox4.Location = new Point(231, 344);
-            richTextBox4.Margin = new Padding(3, 2, 3, 2);
-            richTextBox4.Name = "richTextBox4";
-            richTextBox4.Size = new Size(226, 28);
-            richTextBox4.TabIndex = 29;
-            richTextBox4.Text = "";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(192, 352);
-            label11.Name = "label11";
-            label11.Size = new Size(19, 20);
-            label11.TabIndex = 28;
-            label11.Text = "V";
-            // 
-            // richTextBox5
-            // 
-            richTextBox5.Location = new Point(520, 310);
-            richTextBox5.Margin = new Padding(3, 2, 3, 2);
-            richTextBox5.Name = "richTextBox5";
-            richTextBox5.Size = new Size(226, 28);
-            richTextBox5.TabIndex = 31;
-            richTextBox5.Text = "";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(480, 319);
-            label12.Name = "label12";
-            label12.Size = new Size(29, 20);
-            label12.TabIndex = 30;
-            label12.Text = "U1";
-            // 
-            // richTextBox6
-            // 
-            richTextBox6.Location = new Point(520, 344);
-            richTextBox6.Margin = new Padding(3, 2, 3, 2);
-            richTextBox6.Name = "richTextBox6";
-            richTextBox6.Size = new Size(226, 28);
-            richTextBox6.TabIndex = 33;
-            richTextBox6.Text = "";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(480, 352);
-            label13.Name = "label13";
-            label13.Size = new Size(29, 20);
-            label13.TabIndex = 32;
-            label13.Text = "U2";
+            lblConfirmY.AutoSize = true;
+            lblConfirmY.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmY.Location = new Point(191, 287);
+            lblConfirmY.Name = "lblConfirmY";
+            lblConfirmY.Size = new Size(18, 20);
+            lblConfirmY.TabIndex = 26;
+            lblConfirmY.Text = "Y";
             // 
             // btnCheck
             // 
             btnCheck.BackColor = Color.Firebrick;
             btnCheck.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCheck.ForeColor = Color.White;
-            btnCheck.Location = new Point(253, 384);
+            btnCheck.Location = new Point(253, 404);
             btnCheck.Margin = new Padding(3, 2, 3, 2);
             btnCheck.Name = "btnCheck";
             btnCheck.Size = new Size(82, 28);
             btnCheck.TabIndex = 34;
             btnCheck.Text = "Kiểm tra";
             btnCheck.UseVisualStyleBackColor = false;
+            btnCheck.Click += btnCheck_Click;
             // 
-            // btnUpDoc
+            // btnUpDocCon
             // 
-            btnUpDoc.BackColor = Color.DarkOliveGreen;
-            btnUpDoc.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpDoc.ForeColor = Color.White;
-            btnUpDoc.Location = new Point(413, 384);
-            btnUpDoc.Margin = new Padding(3, 2, 3, 2);
-            btnUpDoc.Name = "btnUpDoc";
-            btnUpDoc.Size = new Size(96, 28);
-            btnUpDoc.TabIndex = 35;
-            btnUpDoc.Text = "Tải văn bản";
-            btnUpDoc.UseVisualStyleBackColor = false;
+            btnUpDocCon.BackColor = Color.DarkOliveGreen;
+            btnUpDocCon.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpDocCon.ForeColor = Color.White;
+            btnUpDocCon.Location = new Point(413, 404);
+            btnUpDocCon.Margin = new Padding(3, 2, 3, 2);
+            btnUpDocCon.Name = "btnUpDocCon";
+            btnUpDocCon.Size = new Size(96, 28);
+            btnUpDocCon.TabIndex = 35;
+            btnUpDocCon.Text = "Tải văn bản";
+            btnUpDocCon.UseVisualStyleBackColor = false;
+            btnUpDocCon.Click += btnUpDocCon_Click;
             // 
-            // btnUpSign
+            // btnUpSignCon
             // 
-            btnUpSign.BackColor = Color.DarkOrange;
-            btnUpSign.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpSign.ForeColor = Color.White;
-            btnUpSign.Location = new Point(582, 384);
-            btnUpSign.Margin = new Padding(3, 2, 3, 2);
-            btnUpSign.Name = "btnUpSign";
-            btnUpSign.Size = new Size(96, 28);
-            btnUpSign.TabIndex = 36;
-            btnUpSign.Text = "Tải chữ ký";
-            btnUpSign.UseVisualStyleBackColor = false;
+            btnUpSignCon.BackColor = Color.DarkOrange;
+            btnUpSignCon.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpSignCon.ForeColor = Color.White;
+            btnUpSignCon.Location = new Point(582, 404);
+            btnUpSignCon.Margin = new Padding(3, 2, 3, 2);
+            btnUpSignCon.Name = "btnUpSignCon";
+            btnUpSignCon.Size = new Size(96, 28);
+            btnUpSignCon.TabIndex = 36;
+            btnUpSignCon.Text = "Tải chữ ký";
+            btnUpSignCon.UseVisualStyleBackColor = false;
+            btnUpSignCon.Click += btnUpSignCon_Click;
+            // 
+            // txtSignC
+            // 
+            txtSignC.AutoSize = true;
+            txtSignC.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSignC.Location = new Point(215, 327);
+            txtSignC.Name = "txtSignC";
+            txtSignC.Size = new Size(57, 20);
+            txtSignC.TabIndex = 41;
+            txtSignC.Text = "Chữ ký";
+            // 
+            // txtConfirmS
+            // 
+            txtConfirmS.Location = new Point(413, 365);
+            txtConfirmS.Margin = new Padding(3, 2, 3, 2);
+            txtConfirmS.Name = "txtConfirmS";
+            txtConfirmS.Size = new Size(158, 28);
+            txtConfirmS.TabIndex = 40;
+            txtConfirmS.Text = "";
+            // 
+            // lblConfirmS
+            // 
+            lblConfirmS.AutoSize = true;
+            lblConfirmS.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmS.Location = new Point(413, 347);
+            lblConfirmS.Name = "lblConfirmS";
+            lblConfirmS.Size = new Size(132, 15);
+            lblConfirmS.TabIndex = 39;
+            lblConfirmS.Text = "Thành phần thứ hai (S):";
+            // 
+            // txtConfirmR
+            // 
+            txtConfirmR.Location = new Point(215, 365);
+            txtConfirmR.Margin = new Padding(3, 2, 3, 2);
+            txtConfirmR.Name = "txtConfirmR";
+            txtConfirmR.Size = new Size(167, 28);
+            txtConfirmR.TabIndex = 38;
+            txtConfirmR.Text = "";
+            // 
+            // lblConfirmR
+            // 
+            lblConfirmR.AutoSize = true;
+            lblConfirmR.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblConfirmR.Location = new Point(215, 347);
+            lblConfirmR.Name = "lblConfirmR";
+            lblConfirmR.Size = new Size(140, 15);
+            lblConfirmR.TabIndex = 37;
+            lblConfirmR.Text = "Thành phần thứ nhất (R):";
             // 
             // VerifySign
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(828, 422);
-            Controls.Add(btnUpSign);
-            Controls.Add(btnUpDoc);
+            ClientSize = new Size(828, 443);
+            Controls.Add(txtSignC);
+            Controls.Add(txtConfirmS);
+            Controls.Add(lblConfirmS);
+            Controls.Add(txtConfirmR);
+            Controls.Add(lblConfirmR);
+            Controls.Add(btnUpSignCon);
+            Controls.Add(btnUpDocCon);
             Controls.Add(btnCheck);
-            Controls.Add(richTextBox6);
-            Controls.Add(label13);
-            Controls.Add(richTextBox5);
-            Controls.Add(label12);
-            Controls.Add(richTextBox4);
-            Controls.Add(label11);
-            Controls.Add(richTextBox3);
-            Controls.Add(label9);
-            Controls.Add(richTextBox2);
-            Controls.Add(label4);
-            Controls.Add(richTextBox1);
-            Controls.Add(label3);
-            Controls.Add(txtP);
-            Controls.Add(label10);
-            Controls.Add(resultSHA);
-            Controls.Add(label2);
-            Controls.Add(veriDoc);
-            Controls.Add(label1);
+            Controls.Add(txtConfirmY);
+            Controls.Add(lblConfirmY);
+            Controls.Add(txtConfirmG);
+            Controls.Add(lblConfirmG);
+            Controls.Add(txtConfirmQ);
+            Controls.Add(lblConfirmQ);
+            Controls.Add(txtConfirmP);
+            Controls.Add(lblConfirmP);
+            Controls.Add(txtHashConfirmC);
+            Controls.Add(lblHashResultC);
+            Controls.Add(txtConfirmDoc);
+            Controls.Add(lblConfirmDoc);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Controls.Add(genKeyLabel);
@@ -523,26 +515,55 @@
         private Label label7;
         private Label label6;
         private Label label5;
-        private Label label1;
-        private RichTextBox veriDoc;
-        private Label label2;
-        private RichTextBox resultSHA;
-        private RichTextBox txtP;
-        private Label label10;
-        private RichTextBox richTextBox1;
-        private Label label3;
-        private RichTextBox richTextBox2;
-        private Label label4;
-        private RichTextBox richTextBox3;
-        private Label label9;
-        private RichTextBox richTextBox4;
-        private Label label11;
-        private RichTextBox richTextBox5;
-        private Label label12;
-        private RichTextBox richTextBox6;
-        private Label label13;
+        private Label lblConfirmDoc;
+        private RichTextBox txtConfirmDoc;
+        private Label lblHashResultC;
+        private RichTextBox txtHashConfirmC;
+        private RichTextBox txtConfirmP;
+        private Label lblConfirmP;
+        private RichTextBox txtConfirmQ;
+        private Label lblConfirmQ;
+        private RichTextBox txtConfirmG;
+        private Label lblConfirmG;
+        private RichTextBox txtConfirmY;
+        private Label lblConfirmY;
         private Button btnCheck;
-        private Button btnUpDoc;
-        private Button btnUpSign;
+        private Button btnUpDocCon;
+        private Button btnUpSignCon;
+        private Label txtSignC;
+        private RichTextBox txtConfirmS;
+        private Label lblConfirmS;
+        private RichTextBox txtConfirmR;
+        private Label lblConfirmR;
+        public RichTextBox TxtConfirmP
+        {
+            get { return txtConfirmP; }
+            set { txtConfirmP = value; }
+        }
+        public RichTextBox TxtConfirmQ
+        {
+            get { return txtConfirmQ; }
+            set { txtConfirmQ = value; }
+        }
+        public RichTextBox TxtConfirmG
+        {
+            get { return txtConfirmG; }
+            set { txtConfirmG = value; }
+        }
+        public RichTextBox TxtConfirmY
+        {
+            get { return txtConfirmY; }
+            set { txtConfirmY = value; }
+        }
+        public RichTextBox TxtConfirmR
+        {
+            get { return txtConfirmR; }
+            set { txtConfirmR = value; }
+        }
+        public RichTextBox TxtConfirmS
+        {
+            get { return txtConfirmS; }
+            set { txtConfirmS = value; }
+        }
     }
 }

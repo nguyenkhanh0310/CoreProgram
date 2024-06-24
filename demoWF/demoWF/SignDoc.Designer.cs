@@ -1,4 +1,6 @@
-﻿namespace demoWF
+﻿using System.Numerics;
+
+namespace demoWF
 {
     partial class SignDoc
     {
@@ -38,34 +40,33 @@
             panelSideBar = new Panel();
             pictureBox1 = new PictureBox();
             genKeyLabel = new Label();
-            label1 = new Label();
+            lblSignDoc = new Label();
             txtSignDoc = new RichTextBox();
-            label2 = new Label();
-            richTextBox1 = new RichTextBox();
-            label3 = new Label();
-            firstEle = new RichTextBox();
-            label4 = new Label();
-            richTextBox2 = new RichTextBox();
+            lblHashResult = new Label();
+            txtHashResult = new RichTextBox();
+            lblSignR = new Label();
+            txtSignR = new RichTextBox();
+            lblSignS = new Label();
+            txtSignS = new RichTextBox();
             panel1 = new Panel();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
-            label10 = new Label();
-            txtP = new RichTextBox();
-            txtQ = new RichTextBox();
-            label11 = new Label();
-            txtG = new RichTextBox();
-            label12 = new Label();
-            txtX = new RichTextBox();
-            label13 = new Label();
-            txtY = new RichTextBox();
-            label14 = new Label();
-            btnCreate = new Button();
-            btnTrans = new Button();
+            lblSignP = new Label();
+            txtSignP = new RichTextBox();
+            txtSignQ = new RichTextBox();
+            lblSignQ = new Label();
+            txtSignG = new RichTextBox();
+            lblSignG = new Label();
+            txtSignX = new RichTextBox();
+            lblSignX = new Label();
+            btnCreateSign = new Button();
             btnSave = new Button();
-            btnDoc = new Button();
+            btnUpDocSign = new Button();
+            txtSign = new Label();
+            txtSignY = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)logoDSA).BeginInit();
             panelMenu.SuspendLayout();
             panelSideBar.SuspendLayout();
@@ -172,7 +173,7 @@
             panelSideBar.Location = new Point(0, 65);
             panelSideBar.Margin = new Padding(3, 2, 3, 2);
             panelSideBar.Name = "panelSideBar";
-            panelSideBar.Size = new Size(145, 332);
+            panelSideBar.Size = new Size(145, 374);
             panelSideBar.TabIndex = 3;
             // 
             // pictureBox1
@@ -196,15 +197,15 @@
             genKeyLabel.TabIndex = 5;
             genKeyLabel.Text = "KÝ VĂN BẢN";
             // 
-            // label1
+            // lblSignDoc
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(171, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 15);
-            label1.TabIndex = 6;
-            label1.Text = "Văn bản cần ký:";
+            lblSignDoc.AutoSize = true;
+            lblSignDoc.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignDoc.Location = new Point(171, 65);
+            lblSignDoc.Name = "lblSignDoc";
+            lblSignDoc.Size = new Size(90, 15);
+            lblSignDoc.TabIndex = 6;
+            lblSignDoc.Text = "Văn bản cần ký:";
             // 
             // txtSignDoc
             // 
@@ -215,62 +216,62 @@
             txtSignDoc.TabIndex = 7;
             txtSignDoc.Text = "";
             // 
-            // label2
+            // lblHashResult
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(171, 182);
-            label2.Name = "label2";
-            label2.Size = new Size(104, 15);
-            label2.TabIndex = 8;
-            label2.Text = "Kết quả hàm băm:";
+            lblHashResult.AutoSize = true;
+            lblHashResult.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHashResult.Location = new Point(171, 182);
+            lblHashResult.Name = "lblHashResult";
+            lblHashResult.Size = new Size(104, 15);
+            lblHashResult.TabIndex = 8;
+            lblHashResult.Text = "Kết quả hàm băm:";
             // 
-            // richTextBox1
+            // txtHashResult
             // 
-            richTextBox1.Location = new Point(175, 208);
-            richTextBox1.Margin = new Padding(3, 2, 3, 2);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(356, 70);
-            richTextBox1.TabIndex = 9;
-            richTextBox1.Text = "";
+            txtHashResult.Location = new Point(175, 208);
+            txtHashResult.Margin = new Padding(3, 2, 3, 2);
+            txtHashResult.Name = "txtHashResult";
+            txtHashResult.Size = new Size(356, 70);
+            txtHashResult.TabIndex = 9;
+            txtHashResult.Text = "";
             // 
-            // label3
+            // lblSignR
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(175, 302);
-            label3.Name = "label3";
-            label3.Size = new Size(140, 15);
-            label3.TabIndex = 10;
-            label3.Text = "Thành phần thứ nhất (R):";
+            lblSignR.AutoSize = true;
+            lblSignR.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignR.Location = new Point(175, 323);
+            lblSignR.Name = "lblSignR";
+            lblSignR.Size = new Size(140, 15);
+            lblSignR.TabIndex = 10;
+            lblSignR.Text = "Thành phần thứ nhất (R):";
             // 
-            // firstEle
+            // txtSignR
             // 
-            firstEle.Location = new Point(175, 320);
-            firstEle.Margin = new Padding(3, 2, 3, 2);
-            firstEle.Name = "firstEle";
-            firstEle.Size = new Size(167, 28);
-            firstEle.TabIndex = 11;
-            firstEle.Text = "";
+            txtSignR.Location = new Point(175, 341);
+            txtSignR.Margin = new Padding(3, 2, 3, 2);
+            txtSignR.Name = "txtSignR";
+            txtSignR.Size = new Size(167, 28);
+            txtSignR.TabIndex = 11;
+            txtSignR.Text = "";
             // 
-            // label4
+            // lblSignS
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(373, 302);
-            label4.Name = "label4";
-            label4.Size = new Size(132, 15);
-            label4.TabIndex = 12;
-            label4.Text = "Thành phần thứ hai (S):";
+            lblSignS.AutoSize = true;
+            lblSignS.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignS.Location = new Point(373, 323);
+            lblSignS.Name = "lblSignS";
+            lblSignS.Size = new Size(132, 15);
+            lblSignS.TabIndex = 12;
+            lblSignS.Text = "Thành phần thứ hai (S):";
             // 
-            // richTextBox2
+            // txtSignS
             // 
-            richTextBox2.Location = new Point(373, 320);
-            richTextBox2.Margin = new Padding(3, 2, 3, 2);
-            richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(158, 28);
-            richTextBox2.TabIndex = 13;
-            richTextBox2.Text = "";
+            txtSignS.Location = new Point(373, 341);
+            txtSignS.Margin = new Padding(3, 2, 3, 2);
+            txtSignS.Name = "txtSignS";
+            txtSignS.Size = new Size(158, 28);
+            txtSignS.TabIndex = 13;
+            txtSignS.Text = "";
             // 
             // panel1
             // 
@@ -341,183 +342,171 @@
             label5.TabIndex = 0;
             label5.Text = "Hướng dẫn:";
             // 
-            // label10
+            // lblSignP
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(549, 190);
-            label10.Name = "label10";
-            label10.Size = new Size(18, 20);
-            label10.TabIndex = 15;
-            label10.Text = "P";
+            lblSignP.AutoSize = true;
+            lblSignP.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignP.Location = new Point(552, 182);
+            lblSignP.Name = "lblSignP";
+            lblSignP.Size = new Size(18, 20);
+            lblSignP.TabIndex = 15;
+            lblSignP.Text = "P";
             // 
-            // txtP
+            // txtSignP
             // 
-            txtP.Location = new Point(588, 182);
-            txtP.Margin = new Padding(3, 2, 3, 2);
-            txtP.Name = "txtP";
-            txtP.Size = new Size(226, 28);
-            txtP.TabIndex = 16;
-            txtP.Text = "";
+            txtSignP.Location = new Point(588, 182);
+            txtSignP.Margin = new Padding(3, 2, 3, 2);
+            txtSignP.Name = "txtSignP";
+            txtSignP.Size = new Size(226, 28);
+            txtSignP.TabIndex = 16;
+            txtSignP.Text = "";
             // 
-            // txtQ
+            // txtSignQ
             // 
-            txtQ.Location = new Point(588, 214);
-            txtQ.Margin = new Padding(3, 2, 3, 2);
-            txtQ.Name = "txtQ";
-            txtQ.Size = new Size(226, 28);
-            txtQ.TabIndex = 18;
-            txtQ.Text = "";
+            txtSignQ.Location = new Point(588, 214);
+            txtSignQ.Margin = new Padding(3, 2, 3, 2);
+            txtSignQ.Name = "txtSignQ";
+            txtSignQ.Size = new Size(226, 28);
+            txtSignQ.TabIndex = 18;
+            txtSignQ.Text = "";
             // 
-            // label11
+            // lblSignQ
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(549, 222);
-            label11.Name = "label11";
-            label11.Size = new Size(20, 20);
-            label11.TabIndex = 17;
-            label11.Text = "Q";
+            lblSignQ.AutoSize = true;
+            lblSignQ.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignQ.Location = new Point(550, 214);
+            lblSignQ.Name = "lblSignQ";
+            lblSignQ.Size = new Size(20, 20);
+            lblSignQ.TabIndex = 17;
+            lblSignQ.Text = "Q";
             // 
-            // txtG
+            // txtSignG
             // 
-            txtG.Location = new Point(588, 248);
-            txtG.Margin = new Padding(3, 2, 3, 2);
-            txtG.Name = "txtG";
-            txtG.Size = new Size(226, 28);
-            txtG.TabIndex = 20;
-            txtG.Text = "";
+            txtSignG.Location = new Point(588, 248);
+            txtSignG.Margin = new Padding(3, 2, 3, 2);
+            txtSignG.Name = "txtSignG";
+            txtSignG.Size = new Size(226, 28);
+            txtSignG.TabIndex = 20;
+            txtSignG.Text = "";
             // 
-            // label12
+            // lblSignG
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(551, 256);
-            label12.Name = "label12";
-            label12.Size = new Size(20, 20);
-            label12.TabIndex = 19;
-            label12.Text = "G";
+            lblSignG.AutoSize = true;
+            lblSignG.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignG.Location = new Point(550, 249);
+            lblSignG.Name = "lblSignG";
+            lblSignG.Size = new Size(20, 20);
+            lblSignG.TabIndex = 19;
+            lblSignG.Text = "G";
             // 
-            // txtX
+            // txtSignX
             // 
-            txtX.Location = new Point(588, 283);
-            txtX.Margin = new Padding(3, 2, 3, 2);
-            txtX.Name = "txtX";
-            txtX.Size = new Size(226, 28);
-            txtX.TabIndex = 22;
-            txtX.Text = "";
+            txtSignX.Location = new Point(588, 283);
+            txtSignX.Margin = new Padding(3, 2, 3, 2);
+            txtSignX.Name = "txtSignX";
+            txtSignX.Size = new Size(226, 28);
+            txtSignX.TabIndex = 22;
+            txtSignX.Text = "";
             // 
-            // label13
+            // lblSignX
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(549, 291);
-            label13.Name = "label13";
-            label13.Size = new Size(19, 20);
-            label13.TabIndex = 21;
-            label13.Text = "X";
+            lblSignX.AutoSize = true;
+            lblSignX.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSignX.Location = new Point(551, 283);
+            lblSignX.Name = "lblSignX";
+            lblSignX.Size = new Size(19, 20);
+            lblSignX.TabIndex = 21;
+            lblSignX.Text = "X";
             // 
-            // txtY
+            // btnCreateSign
             // 
-            txtY.Location = new Point(588, 322);
-            txtY.Margin = new Padding(3, 2, 3, 2);
-            txtY.Name = "txtY";
-            txtY.Size = new Size(226, 28);
-            txtY.TabIndex = 24;
-            txtY.Text = "";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(551, 330);
-            label14.Name = "label14";
-            label14.Size = new Size(18, 20);
-            label14.TabIndex = 23;
-            label14.Text = "Y";
-            // 
-            // btnCreate
-            // 
-            btnCreate.BackColor = Color.DarkCyan;
-            btnCreate.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCreate.ForeColor = Color.White;
-            btnCreate.Location = new Point(316, 356);
-            btnCreate.Margin = new Padding(3, 2, 3, 2);
-            btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(102, 31);
-            btnCreate.TabIndex = 25;
-            btnCreate.Text = "Tạo chữ ký";
-            btnCreate.UseVisualStyleBackColor = false;
-            btnCreate.Click += btnCreate_Click;
-            // 
-            // btnTrans
-            // 
-            btnTrans.BackColor = Color.OliveDrab;
-            btnTrans.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTrans.ForeColor = Color.White;
-            btnTrans.Location = new Point(456, 356);
-            btnTrans.Margin = new Padding(3, 2, 3, 2);
-            btnTrans.Name = "btnTrans";
-            btnTrans.Size = new Size(102, 31);
-            btnTrans.TabIndex = 26;
-            btnTrans.Text = "Chuyển tiếp";
-            btnTrans.UseVisualStyleBackColor = false;
+            btnCreateSign.BackColor = Color.DarkCyan;
+            btnCreateSign.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCreateSign.ForeColor = Color.White;
+            btnCreateSign.Location = new Point(316, 388);
+            btnCreateSign.Margin = new Padding(3, 2, 3, 2);
+            btnCreateSign.Name = "btnCreateSign";
+            btnCreateSign.Size = new Size(102, 31);
+            btnCreateSign.TabIndex = 25;
+            btnCreateSign.Text = "Tạo chữ ký";
+            btnCreateSign.UseVisualStyleBackColor = false;
+            btnCreateSign.Click += btnCreate_Click;
             // 
             // btnSave
             // 
             btnSave.BackColor = Color.Goldenrod;
             btnSave.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(600, 356);
+            btnSave.Location = new Point(457, 388);
             btnSave.Margin = new Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(102, 31);
             btnSave.TabIndex = 27;
             btnSave.Text = "Lưu";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
-            // btnDoc
+            // btnUpDocSign
             // 
-            btnDoc.BackColor = Color.DarkRed;
-            btnDoc.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDoc.ForeColor = Color.White;
-            btnDoc.Location = new Point(175, 356);
-            btnDoc.Margin = new Padding(3, 2, 3, 2);
-            btnDoc.Name = "btnDoc";
-            btnDoc.Size = new Size(102, 31);
-            btnDoc.TabIndex = 28;
-            btnDoc.Text = "Tải văn bản";
-            btnDoc.UseVisualStyleBackColor = false;
-            btnDoc.Click += btnDoc_Click;
+            btnUpDocSign.BackColor = Color.DarkRed;
+            btnUpDocSign.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpDocSign.ForeColor = Color.White;
+            btnUpDocSign.Location = new Point(175, 388);
+            btnUpDocSign.Margin = new Padding(3, 2, 3, 2);
+            btnUpDocSign.Name = "btnUpDocSign";
+            btnUpDocSign.Size = new Size(102, 31);
+            btnUpDocSign.TabIndex = 28;
+            btnUpDocSign.Text = "Tải văn bản";
+            btnUpDocSign.UseVisualStyleBackColor = false;
+            btnUpDocSign.Click += btnDoc_Click;
+            // 
+            // txtSign
+            // 
+            txtSign.AutoSize = true;
+            txtSign.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSign.Location = new Point(175, 291);
+            txtSign.Name = "txtSign";
+            txtSign.Size = new Size(57, 20);
+            txtSign.TabIndex = 29;
+            txtSign.Text = "Chữ ký";
+            // 
+            // txtSignY
+            // 
+            txtSignY.Location = new Point(588, 320);
+            txtSignY.Margin = new Padding(3, 2, 3, 2);
+            txtSignY.Name = "txtSignY";
+            txtSignY.Size = new Size(226, 28);
+            txtSignY.TabIndex = 30;
+            txtSignY.Text = "";
+            txtSignY.Visible = false;
             // 
             // SignDoc
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(824, 398);
-            Controls.Add(btnDoc);
+            ClientSize = new Size(824, 440);
+            Controls.Add(txtSignY);
+            Controls.Add(txtSign);
+            Controls.Add(btnUpDocSign);
             Controls.Add(btnSave);
-            Controls.Add(btnTrans);
-            Controls.Add(btnCreate);
-            Controls.Add(txtY);
-            Controls.Add(label14);
-            Controls.Add(txtX);
-            Controls.Add(label13);
-            Controls.Add(txtG);
-            Controls.Add(label12);
-            Controls.Add(txtQ);
-            Controls.Add(label11);
-            Controls.Add(txtP);
-            Controls.Add(label10);
+            Controls.Add(btnCreateSign);
+            Controls.Add(txtSignX);
+            Controls.Add(lblSignX);
+            Controls.Add(txtSignG);
+            Controls.Add(lblSignG);
+            Controls.Add(txtSignQ);
+            Controls.Add(lblSignQ);
+            Controls.Add(txtSignP);
+            Controls.Add(lblSignP);
             Controls.Add(panel1);
-            Controls.Add(richTextBox2);
-            Controls.Add(label4);
-            Controls.Add(firstEle);
-            Controls.Add(label3);
-            Controls.Add(richTextBox1);
-            Controls.Add(label2);
+            Controls.Add(txtSignS);
+            Controls.Add(lblSignS);
+            Controls.Add(txtSignR);
+            Controls.Add(lblSignR);
+            Controls.Add(txtHashResult);
+            Controls.Add(lblHashResult);
             Controls.Add(txtSignDoc);
-            Controls.Add(label1);
+            Controls.Add(lblSignDoc);
             Controls.Add(genKeyLabel);
             Controls.Add(pictureBox1);
             Controls.Add(panelMenu);
@@ -548,33 +537,58 @@
         private Panel panelSideBar;
         private PictureBox pictureBox1;
         private Label genKeyLabel;
-        private Label label1;
+        private Label lblSignDoc;
         private RichTextBox txtSignDoc;
-        private Label label2;
-        private RichTextBox richTextBox1;
-        private Label label3;
-        private RichTextBox firstEle;
-        private Label label4;
-        private RichTextBox richTextBox2;
+        private Label lblHashResult;
+        private RichTextBox txtHashResult;
+        private Label lblSignR;
+        private RichTextBox txtSignR;
+        private Label lblSignS;
+        private RichTextBox txtSignS;
         private Panel panel1;
         private Label label5;
         private Label label9;
         private Label label8;
         private Label label7;
         private Label label6;
-        private Label label10;
-        private RichTextBox txtP;
-        private RichTextBox txtQ;
-        private Label label11;
-        private RichTextBox txtG;
-        private Label label12;
-        private RichTextBox txtX;
-        private Label label13;
-        private RichTextBox txtY;
-        private Label label14;
-        private Button btnCreate;
-        private Button btnTrans;
+        private Label lblSignP;
+        private RichTextBox txtSignP;
+        private RichTextBox txtSignQ;
+        private Label lblSignQ;
+        private RichTextBox txtSignG;
+        private Label lblSignG;
+        private RichTextBox txtSignX;
+        private Label lblSignX;
+        private Button btnCreateSign;
         private Button btnSave;
-        private Button btnDoc;
+        private Button btnUpDocSign;
+        private Label txtSign;
+        private RichTextBox txtSignY;
+
+        public RichTextBox TxtSignP
+        {
+            get { return txtSignP; }
+            set { txtSignP = value; }
+        }
+        public RichTextBox TxtSignQ
+        {
+            get { return txtSignQ; }
+            set { txtSignQ = value; }
+        }
+        public RichTextBox TxtSignG
+        {
+            get { return txtSignG; }
+            set { txtSignG = value; }
+        }
+        public RichTextBox TxtSignX
+        {
+            get { return txtSignX; }
+            set { txtSignX = value; }
+        }
+        public RichTextBox TxtSignY
+        {
+            get { return txtSignY; }
+            set { txtSignY = value; }
+        }
     }
 }

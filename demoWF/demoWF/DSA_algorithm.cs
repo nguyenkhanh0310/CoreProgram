@@ -91,19 +91,6 @@ namespace demoWF
             x = utilities.GetRandomNumber(BigInteger.One, q - BigInteger.One);
             y = BigInteger.ModPow(g, x, p);
         }
-        //public void generateKeyDSA()
-        //{
-        //    q = utilities.GeneratePrimeNumber();
-        //    p = utilities.GeneratePrimeNumberIsMultiple(q);
-        //    h = utilities.GetRandomNumber(2, p - 2);
-        //    do
-        //    {
-        //        g = BigInteger.ModPow(h, (p - BigInteger.One) / q, p);
-        //    } while (g == BigInteger.One);
-
-        //    x = utilities.GetRandomNumber(BigInteger.One, q - BigInteger.One);
-        //    y = BigInteger.ModPow(g, x, p);
-        //}
 
         public Dictionary<BigInteger, BigInteger> SigningMessage(string hashCode, BigInteger p, BigInteger q, BigInteger g, BigInteger x)
         {
