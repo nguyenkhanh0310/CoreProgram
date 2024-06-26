@@ -17,22 +17,13 @@ namespace demoWF
     public partial class VerifySign : Form
     {
         DSA_algorithm d = new DSA_algorithm();
-        private MainFrame mainF;
-        public VerifySign(MainFrame mainF)
-        {
-            this.mainF = mainF;
-        }
-        private void UpdateData()
-        {
-            txtConfirmY.Text = mainF.TxtGenY.ToString(); // Lấy dữ liệu từ Form1
-        }
-
-        //private void SaveData()
-        //{
-        //    mainF.TxtGenY = txtConfirmY.Text; // Đặt dữ liệu trong Form1
-        //}
         public VerifySign()
         {
+            InitializeComponent();
+        }
+        public VerifySign(DSA_algorithm f)
+        {
+            d = f;
             InitializeComponent();
         }
 
@@ -141,7 +132,6 @@ namespace demoWF
                 //string yString = txtConfirmY.Text.Trim();
                 //string rString = txtConfirmR.Text.Trim();
                 //string sString = txtConfirmS.Text.Trim();
-
                 // Create BigInteger objects
                 BigInteger p = BigInteger.Parse(txtConfirmP.Text.ToString());
                 BigInteger q = BigInteger.Parse(txtConfirmQ.Text.ToString());
@@ -149,9 +139,8 @@ namespace demoWF
                 BigInteger y = BigInteger.Parse(txtConfirmY.Text.ToString());
                 BigInteger r = BigInteger.Parse(txtConfirmR.Text.ToString());
                 BigInteger s = BigInteger.Parse(txtConfirmS.Text.ToString());
-
                 if (!r.Equals(d.R))
-                {
+                    {
                     MessageBox.Show("Thành phần chữ ký r bị giả mạo ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }

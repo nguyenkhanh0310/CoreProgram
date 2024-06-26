@@ -37,8 +37,7 @@ namespace demoWF
 
         private void verifySignature_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            VerifySign verify = new VerifySign();
-            MainFrame mainFrame = new MainFrame();
+            VerifySign verify = new VerifySign(d);
             verify.TxtConfirmR.Text = txtSignR.Text;
             verify.TxtConfirmS.Text = txtSignS.Text;
             verify.TxtConfirmP.Text = txtSignP.Text;
@@ -114,11 +113,11 @@ namespace demoWF
                 txtSignS.Text = s.ToString();
                 d.R = r;
                 d.S = s;
-                MessageBox.Show(null, "Tạo chữ ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tạo chữ ký thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(null, "Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
