@@ -155,5 +155,10 @@ namespace demoWF
                 }
             }
         }
+
+        private void txtSignX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

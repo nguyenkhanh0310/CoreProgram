@@ -121,10 +121,10 @@ namespace demoWF
                 // Ghi vào ô phần sinh chữ ký
 
                 // Ghi vào ô phần xác nhận chữ ký
-                v.TxtConfirmP.Text = p.ToString();
-                v.TxtConfirmQ.Text = q.ToString();
-                v.TxtConfirmG.Text = g.ToString();
-                v.TxtConfirmY.Text = y.ToString();
+                //v.TxtConfirmP.Text = p.ToString();
+                //v.TxtConfirmQ.Text = q.ToString();
+                //v.TxtConfirmG.Text = g.ToString();
+                //v.TxtConfirmY.Text = y.ToString();
                 MessageBox.Show("Xác nhận khóa thành công, đã chuyển dữ liệu khóa sang những tab khác",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -136,6 +136,15 @@ namespace demoWF
                 MessageBox.Show("P, Q, X không hợp lệ",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void MainFrame_Load(object sender, EventArgs e)
+        {
+            txtGenP.Text = txtGenP.Text;
+            txtGenQ.Text = txtGenQ.Text;
+            txtGenG.Text = txtGenG.Text;
+            txtGenX.Text = txtGenX.Text;
+            txtGenY.Text = txtGenY.Text;
         }
     }
 }
