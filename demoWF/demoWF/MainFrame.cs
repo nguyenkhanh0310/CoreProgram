@@ -94,7 +94,7 @@ namespace demoWF
                     MessageBox.Show("Tham số p-1 không chia hết cho q", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                if (!(x.CompareTo(BigInteger.One) == 1 && x.CompareTo(BigInteger.Subtract(q, BigInteger.One)) == -1))
+                if (!(x.CompareTo(BigInteger.Zero) == 1 && x.CompareTo(BigInteger.Subtract(q, BigInteger.Zero)) == -1))
                 {
                     MessageBox.Show("x không nằm trong khoảng từ 1 đến q-1", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -118,13 +118,7 @@ namespace demoWF
                 txtGenG.Text = g.ToString();
                 txtGenX.Text = x.ToString();
                 txtGenY.Text = y.ToString();
-                // Ghi vào ô phần sinh chữ ký
-
-                // Ghi vào ô phần xác nhận chữ ký
-                //v.TxtConfirmP.Text = p.ToString();
-                //v.TxtConfirmQ.Text = q.ToString();
-                //v.TxtConfirmG.Text = g.ToString();
-                //v.TxtConfirmY.Text = y.ToString();
+  
                 MessageBox.Show("Xác nhận khóa thành công, đã chuyển dữ liệu khóa sang những tab khác",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

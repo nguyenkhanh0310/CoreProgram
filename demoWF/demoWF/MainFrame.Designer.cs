@@ -209,7 +209,6 @@
             txtGenG.AcceptsReturn = true;
             resources.ApplyResources(txtGenG, "txtGenG");
             txtGenG.Name = "txtGenG";
-            txtGenG.ReadOnly = true;
             // 
             // lblGenX
             // 
@@ -232,7 +231,6 @@
             txtGenY.AcceptsReturn = true;
             resources.ApplyResources(txtGenY, "txtGenY");
             txtGenY.Name = "txtGenY";
-            txtGenY.ReadOnly = true;
             // 
             // btnRandomKey
             // 

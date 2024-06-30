@@ -71,7 +71,7 @@ namespace demoWF
                 randomBigInteger = new BigInteger(bytes);
             } while (randomBigInteger < min || randomBigInteger > max);
 
-            randomBigInteger = (randomBigInteger - min) % (max - min + 1) + min;
+            //randomBigInteger = (randomBigInteger - min) % (max - min + 1) + min;
             return randomBigInteger;
         }
         //Kiểm tra tính nguyên tố bằng Miller Rabin với k lần thử

@@ -260,9 +260,11 @@ namespace demoWF
             txtSignR.Location = new Point(175, 341);
             txtSignR.Margin = new Padding(3, 2, 3, 2);
             txtSignR.Name = "txtSignR";
+            txtSignR.ReadOnly = true;
             txtSignR.Size = new Size(167, 52);
             txtSignR.TabIndex = 11;
             txtSignR.Text = "";
+            txtSignR.TextChanged += txtSignR_TextChanged;
             // 
             // lblSignS
             // 
@@ -281,6 +283,7 @@ namespace demoWF
             txtSignS.Location = new Point(373, 341);
             txtSignS.Margin = new Padding(3, 2, 3, 2);
             txtSignS.Name = "txtSignS";
+            txtSignS.ReadOnly = true;
             txtSignS.Size = new Size(158, 52);
             txtSignS.TabIndex = 13;
             txtSignS.Text = "";
@@ -503,7 +506,6 @@ namespace demoWF
             txtSignY.TabIndex = 30;
             txtSignY.Text = "";
             txtSignY.Visible = false;
-            //txtSignY.TextChanged += this.txtSignY_TextChanged;
             // 
             // txtSignX
             // 

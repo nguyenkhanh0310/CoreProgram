@@ -38,8 +38,8 @@ namespace demoWF
         private void verifySignature_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             VerifySign verify = new VerifySign(d);
-            verify.TxtConfirmR.Text = txtSignR.Text;
-            verify.TxtConfirmS.Text = txtSignS.Text;
+            //verify.TxtConfirmR.Text = txtSignR.Text;
+            //verify.TxtConfirmS.Text = txtSignS.Text;
             verify.TxtConfirmP.Text = txtSignP.Text;
             verify.TxtConfirmQ.Text = txtSignQ.Text;
             verify.TxtConfirmG.Text = txtSignG.Text;
@@ -157,6 +157,11 @@ namespace demoWF
         }
 
         private void txtSignX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSignR_TextChanged(object sender, EventArgs e)
         {
 
         }
